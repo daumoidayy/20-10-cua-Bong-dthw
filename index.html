@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quà Tặng 20/10</title>
+    <style>
+      /* CSS để tạo kiểu */
+      body {
+        /* Căn giữa mọi thứ trên trang */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fce4ec; /* Màu nền hồng nhạt cho toàn trang */
+      }
+
+      .gift-box {
+        background-color: white; /* Ô nền trắng */
+        padding: 40px; /* Thêm khoảng đệm bên trong */
+        border-radius: 10px; /* Bo góc cho mềm mại */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        text-align: center; /* Căn giữa nội dung */
+        max-width: 300px;
+
+        /* Hiệu ứng xuất hiện rõ dần */
+        opacity: 0; /* Ban đầu ẩn đi */
+        transform: translateY(20px); /* Dịch chuyển xuống một chút */
+        transition: opacity 1s ease-out, transform 1s ease-out; /* Thời gian hiệu ứng */
+      }
+
+      .gift-box.fade-in {
+        opacity: 1; /* Hiện rõ */
+        transform: translateY(0); /* Trở về vị trí ban đầu */
+      }
+
+      .gift-box p {
+        font-size: 1.2em; /* Cỡ chữ to hơn một chút */
+        margin-bottom: 25px; /* Khoảng cách giữa chữ và nút */
+      }
+
+      .gift-button {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+        background-color: #ff69b4; /* Màu hồng đậm cho nút */
+        text-decoration: none; /* Bỏ gạch chân của link */
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Hiệu ứng khi di chuột */
+      }
+
+      .gift-button:hover {
+        background-color: #ff85c1; /* Màu nhạt hơn khi di chuột qua */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gift-box" id="myGiftBox">
+      <p>Gửi cậu món quà ngày 20/10 nha💖</p>
+
+      <a href="thiep.html" class="gift-button">Nhận quà nè!</a>
+    </div>
+
+    <script>
+      // JavaScript để thêm class 'fade-in' sau khi trang tải xong
+      document.addEventListener("DOMContentLoaded", function () {
+        const giftBox = document.getElementById("myGiftBox");
+        if (giftBox) {
+          giftBox.classList.add("fade-in");
+        }
+      });
+    </script>
+  </body>
+</html>
